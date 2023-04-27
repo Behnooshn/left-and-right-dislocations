@@ -55,3 +55,46 @@ p_value = 2 * (1 - stats.norm.cdf(abs(z_score)))
 # Print the results
 print("z-score:", z_score)
 print("p-value:", p_value)
+
+
+
+import numpy as np
+from statsmodels.stats.proportion import proportions_ztest
+
+# Sample sizes
+n1 = n2 = 67
+
+# Number of successes for DeepL
+successes1 = 51
+successes2 = 29
+
+# Proportions
+p1 = successes1 / n1
+p2 = successes2 / n2
+
+# Null hypothesis: p1 = p2
+# Alternative hypothesis: p1 != p2
+# Significance level: 0.05 (default)
+z_score, p_value = proportions_ztest([successes1, successes2], [n1, n2], alternative='two-sided')
+
+print(f"Z-score: {z_score:.2f}")
+print(f"P-value: {p_value:.2f}")
+
+
+
+import numpy as np
+from scipy.stats import norm
+
+
+# Number of successes for Google Translate 
+ld_success_rate = 46/69
+rd_success_rate = 23/69
+
+p_hat = (46 + 23) / (69 + 69)
+se = np.sqrt(p_hat * (1 - p_hat) * (1/69 + 1/69))
+z = (ld_success_rate - rd_success_rate) / se
+p = 2 * (1 - norm.cdf(np.abs(z)))
+
+print("Z-score: {:.2f}".format(z))
+print("P-value: {:.2f}".format(p))
+
