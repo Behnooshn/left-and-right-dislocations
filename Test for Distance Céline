@@ -1,5 +1,275 @@
 
+GoogleDistance2022
+
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+
+# read the excel file into a pandas DataFrame
+df = pd.read_excel('DataC.xlsx')
+
+# drop rows with missing values in the 'dist_avg' column
+df = df.dropna(subset=['dist_avg'])
+
+# convert 'GoogleAnalysis2022' column to binary values
+df['GoogleAnalysis2022'] = np.where(df['GoogleAnalysis2022'] == 'no copy', 1, 0)
+
+# define the dependent and independent variables
+y = df['GoogleAnalysis2022']
+X = sm.add_constant(df['dist_avg'])
+
+# fit the linear regression model
+model = sm.Logit(y, X).fit()
+
+# print the regression summary
+print(model.summary())
+
+
+Optimization terminated successfully.
+         Current function value: 0.526596
+         Iterations 5
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:     GoogleAnalysis2022   No. Observations:                   91
+Model:                          Logit   Df Residuals:                       89
+Method:                           MLE   Df Model:                            1
+Date:                Fri, 12 May 2023   Pseudo R-squ.:               6.363e-05
+Time:                        07:56:25   Log-Likelihood:                -47.920
+converged:                       True   LL-Null:                       -47.923
+Covariance Type:            nonrobust   LLR p-value:                    0.9378
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -1.3305      0.853     -1.560      0.119      -3.003       0.341
+dist_avg       0.0224      0.286      0.078      0.938      -0.538       0.583
+==============================================================================
 
 
 
+DeepLDistance2022
 
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+
+# read the excel file into a pandas DataFrame
+df = pd.read_excel('DataC.xlsx')
+
+# drop rows with missing values in the 'dist_avg' column
+df = df.dropna(subset=['dist_avg'])
+
+# convert 'GoogleAnalysis2022' column to binary values
+df['DeepLAnalysis2022'] = np.where(df['DeepLAnalysis2022'] == 'no copy', 1, 0)
+
+# define the dependent and independent variables
+y = df['DeepLAnalysis2022']
+X = sm.add_constant(df['dist_avg'])
+
+# fit the linear regression model
+model = sm.Logit(y, X).fit()
+
+# print the regression summary
+print(model.summary())
+
+
+Optimization terminated successfully.
+         Current function value: 0.415322
+         Iterations 6
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:      DeepLAnalysis2022   No. Observations:                   91
+Model:                          Logit   Df Residuals:                       89
+Method:                           MLE   Df Model:                            1
+Date:                Fri, 12 May 2023   Pseudo R-squ.:                 0.07212
+Time:                        07:59:19   Log-Likelihood:                -37.794
+converged:                       True   LL-Null:                       -40.732
+Covariance Type:            nonrobust   LLR p-value:                   0.01536
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -3.9038      1.058     -3.690      0.000      -5.978      -1.830
+dist_avg       0.7525      0.317      2.375      0.018       0.132       1.373
+==============================================================================
+
+
+GoogleDistance2023
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+
+# read the excel file into a pandas DataFrame
+df = pd.read_excel('DataC.xlsx')
+
+# drop rows with missing values in the 'dist_avg' column
+df = df.dropna(subset=['dist_avg'])
+
+# convert 'GoogleAnalysis2022' column to binary values
+df['GoogleAnalysis2023'] = np.where(df['GoogleAnalysis2023'] == 'no copy', 1, 0)
+
+# define the dependent and independent variables
+y = df['GoogleAnalysis2023']
+X = sm.add_constant(df['dist_avg'])
+
+# fit the linear regression model
+model = sm.Logit(y, X).fit()
+
+# print the regression summary
+print(model.summary())
+
+
+Optimization terminated successfully.
+         Current function value: 0.497331
+         Iterations 5
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:     GoogleAnalysis2023   No. Observations:                   91
+Model:                          Logit   Df Residuals:                       89
+Method:                           MLE   Df Model:                            1
+Date:                Fri, 12 May 2023   Pseudo R-squ.:               1.902e-05
+Time:                        08:00:31   Log-Likelihood:                -45.257
+converged:                       True   LL-Null:                       -45.258
+Covariance Type:            nonrobust   LLR p-value:                    0.9669
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -1.3649      0.887     -1.539      0.124      -3.104       0.374
+dist_avg      -0.0124      0.299     -0.041      0.967      -0.598       0.574
+==============================================================================
+
+
+DeepLDistance2023
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+
+# read the excel file into a pandas DataFrame
+df = pd.read_excel('DataC.xlsx')
+
+# drop rows with missing values in the 'dist_avg' column
+df = df.dropna(subset=['dist_avg'])
+
+# convert 'GoogleAnalysis2022' column to binary values
+df['DeepLAnalysis2023'] = np.where(df['DeepLAnalysis2023'] == 'no copy', 1, 0)
+
+# define the dependent and independent variables
+y = df['DeepLAnalysis2023']
+X = sm.add_constant(df['dist_avg'])
+
+# fit the linear regression model
+model = sm.Logit(y, X).fit()
+
+# print the regression summary
+print(model.summary())
+
+Optimization terminated successfully.
+         Current function value: 0.265979
+         Iterations 7
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:      DeepLAnalysis2023   No. Observations:                   91
+Model:                          Logit   Df Residuals:                       89
+Method:                           MLE   Df Model:                            1
+Date:                Fri, 12 May 2023   Pseudo R-squ.:                 0.01921
+Time:                        08:01:35   Log-Likelihood:                -24.204
+converged:                       True   LL-Null:                       -24.678
+Covariance Type:            nonrobust   LLR p-value:                    0.3301
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -3.7139      1.361     -2.729      0.006      -6.381      -1.047
+dist_avg       0.4123      0.417      0.990      0.322      -0.404       1.229
+==============================================================================
+<ipython-input-4-542960744541>:12: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+
+SystranDistance2023
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+
+# read the excel file into a pandas DataFrame
+df = pd.read_excel('DataC.xlsx')
+
+# drop rows with missing values in the 'dist_avg' column
+df = df.dropna(subset=['dist_avg'])
+
+# convert 'GoogleAnalysis2022' column to binary values
+df['SystranAnalysis'] = np.where(df['SystranAnalysis'] == 'no copy', 1, 0)
+
+# define the dependent and independent variables
+y = df['SystranAnalysis']
+X = sm.add_constant(df['dist_avg'])
+
+# fit the linear regression model
+model = sm.Logit(y, X).fit()
+
+# print the regression summary
+print(model.summary())
+
+
+Optimization terminated successfully.
+         Current function value: 0.321042
+         Iterations 6
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:        SystranAnalysis   No. Observations:                   91
+Model:                          Logit   Df Residuals:                       89
+Method:                           MLE   Df Model:                            1
+Date:                Fri, 12 May 2023   Pseudo R-squ.:                0.005021
+Time:                        08:22:09   Log-Likelihood:                -29.215
+converged:                       True   LL-Null:                       -29.362
+Covariance Type:            nonrobust   LLR p-value:                    0.5871
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -2.8198      1.190     -2.370      0.018      -5.152      -0.488
+dist_avg       0.2100      0.382      0.550      0.583      -0.539       0.959
+==============================================================================
+
+
+
+MBARTDistance2023
+
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+
+# read the excel file into a pandas DataFrame
+df = pd.read_excel('DataC.xlsx')
+
+# drop rows with missing values in the 'dist_avg' column
+df = df.dropna(subset=['dist_avg'])
+
+# convert 'GoogleAnalysis2022' column to binary values
+df['MBARTANALYSIS'] = np.where(df['MBARTANALYSIS'] == 'no copy', 1, 0)
+
+# define the dependent and independent variables
+y = df['MBARTANALYSIS']
+X = sm.add_constant(df['dist_avg'])
+
+# fit the linear regression model
+model = sm.Logit(y, X).fit()
+
+# print the regression summary
+print(model.summary())
+
+Optimization terminated successfully.
+         Current function value: 0.059740
+         Iterations 9
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:          MBARTANALYSIS   No. Observations:                   91
+Model:                          Logit   Df Residuals:                       89
+Method:                           MLE   Df Model:                            1
+Date:                Fri, 12 May 2023   Pseudo R-squ.:                 0.01253
+Time:                        08:23:59   Log-Likelihood:                -5.4364
+converged:                       True   LL-Null:                       -5.5053
+Covariance Type:            nonrobust   LLR p-value:                    0.7103
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -5.6917      3.460     -1.645      0.100     -12.474       1.091
+dist_avg       0.3972      1.044      0.381      0.704      -1.649       2.443
+==============================================================================
